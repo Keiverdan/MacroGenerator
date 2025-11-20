@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generador de Macros para Wow - Mists of Pandaria</title>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="styles.css">
+
+
+</head>
+<body>
+
+    <div class="container">
+        <h1>Generador de Macros para Wow</h1>
+        <p class="subtitle">World of Warcraft: Mists of Pandaria (MoP)</p>
+
+        <div class="control-group">
+			<label for="classSelect">0. Selecciona tu Clase</label>
+				<select id="classSelect" onchange="changeClass()">
+				<option value="Paladin">Paladín</option>
+                <option value="Mago">Mago</option>
+				<option value="Druida">Druida</option>
+				<option value="Guerrero">Warrior</option>
+				<option value="DK">Caballero de la Muerte</option>
+				<option value="Rogue">Pícaro</option>
+				</select>
+            <label for="commandType">1. Selección del Comando Principal</label>
+            <select id="commandType">
+                <option value="/castsequence">Secuencia de lanzamiento (/castsequence)</option>
+                <option value="/cast">Lanzamiento simple (/cast)</option>
+            </select>
+        </div>
+
+        <div class="control-group">
+            <label for="conditionSelect">2. Condición del Macro</label>
+            <select id="conditionSelect" onchange="toggleSelfCastOption()">
+                <option value="[@mouseover]">Hostil / Normal ([@mouseover])</option>
+                <option value="[@mouseover,help,nodead][help,nodead]">Ayuda / Sanación ([@mouseover,help,nodead][help,nodead])</option>
+            </select>
+            
+            <div id="selfCastContainer" class="checkbox-wrapper" style="display: none;">
+                <label class="checkbox-label">
+                    <input type="checkbox" id="selfCastCheckbox">
+                    <span>Lanzar sobre <b>mí</b> si no hay objetivo ([@player])</span>
+                </label>
+            </div>
+
+            <small style="display:block; margin-top: 5px; color: #999;">Selecciona el comportamiento al pasar el ratón sobre el objetivo.</small>
+        </div>
+
+        <div class="control-group">
+            <label for="spellSelect">3. Elige Habilidades, Especializaciones y Talentos (Máx. 4)</label>
+            <div class="spell-selector">
+                <select id="spellSelect">
+                    <option value="" disabled selected>Selecciona una habilidad...</option>
+                </select>
+                <button class="btn-add" onclick="addSpell()">+</button>
+            </div>
+            <div class="selected-list" id="spellList">
+                </div>
+        </div>
+
+        <button class="btn-generate" onclick="generateMacro()">Generar Macro ✨</button>
+
+        <div class="result-area">
+            <textarea id="macroOutput" readonly placeholder="El macro se mostrará aquí..."></textarea>
+            <button class="btn-copy" onclick="copyToClipboard()">Copiar</button>
+        </div>
+    </div>
+
+	<script src="spells_data.js"> </script> <script src="script.js"></script>
+
+</body>
+</html>
