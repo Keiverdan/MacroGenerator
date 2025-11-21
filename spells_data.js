@@ -146,8 +146,9 @@ const CLASS_SPELLS = {
 	"Transformación oscura",
 	"Transfusión de sangre",
 	"Transfusión de runa",
-	"Zona antimagia",]}
-	],
+	"Zona antimagia"
+	]},
+],
 	
 	"Rogue": [
 	{ category: "RogueKill", spells: [
@@ -155,3 +156,4 @@ const CLASS_SPELLS = {
 	]
 
 }
+
