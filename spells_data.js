@@ -75,17 +75,17 @@ const CLASS_SPELLS = {
 ],
 	"Mago": [
 	{ category: "Mage", spells: [
-	]}
+	]},
 	],
 	
 	"Druida": [
 	{ category: "Dudu", spells: [
-	]}
+	]},
 	],
 	
 	"Guerrero": [
 	{ category: "War", spells: [
-	]}
+	]},
 	],
 
 	"DK": [
@@ -152,8 +152,9 @@ const CLASS_SPELLS = {
 	
 	"Rogue": [
 	{ category: "RogueKill", spells: [
-	]}
-	]
+	]},
+	],
 
 }
+
 
